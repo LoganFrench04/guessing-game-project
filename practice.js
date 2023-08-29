@@ -8,8 +8,14 @@ const readline = require("readline");
 let askGuess = () => {
     rl.question("Enter a guess: ", num => {
        let answer = Number(num)
-        checkGuess(answer)
-        rl.close()
+       // checkGuess(answer)
+        if (checkGuess(answer)) {
+            console.log('You win!')
+            rl.close()
+        } else {
+            askGuess()
+        }
+        //rl.close()
     })
 
 }
