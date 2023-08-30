@@ -21,7 +21,13 @@ let askGuess = () => {
 }
 askGuess()
 
-const secretNumber = 1;
+let randomInRange = (min, max) => {
+    let rand = Math.random() * (max- min) + min
+    return rand
+}
+
+
+const secretNumber = randomInRange();
 
 let checkGuess = (num) => {
     if (num > secretNumber) {
@@ -36,3 +42,7 @@ let checkGuess = (num) => {
         return true
     }
 }
+
+console.log(randomInRange(15, 20)); // 16
+console.log(randomInRange(15, 20)); // 17
+console.log(randomInRange(15, 20)); // 20
